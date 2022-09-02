@@ -1,0 +1,8 @@
+(executable
+ (name main)
+ (public_name proj2)
+ (modules Main)
+ (libraries proj2)
+ (preprocess
+  (pps ppx_let))
+ (package ocaml-nix))

@@ -1,0 +1,9 @@
+(library
+ (name shared)
+ (instrumentation
+  (backend bisect_ppx))
+ (libraries base yojson biniou atdgen-runtime re str uuidm))
+
+(include_subdirs unqualified)
+
+(dirs src)

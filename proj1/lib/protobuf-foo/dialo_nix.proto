@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package dialo.nix.demo.v1;
+
+import "google/protobuf/duration.proto";
+import "google/rpc/status.proto";
+
+
+message Response {
+  google.rpc.Status error = 1;
+  google.protobuf.Duration timestamp = 2;
+}

@@ -1,0 +1,8 @@
+{
+  "name": "ocaml-nix-demo-monorepo",
+  "private": true,
+  "workspaces": [
+    "rescript",
+    "shared"
+  ]
+}

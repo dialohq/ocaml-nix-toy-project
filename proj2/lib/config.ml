@@ -1,0 +1,1 @@
+let project_name = "proj2"

@@ -1,0 +1,1 @@
+let project_name = "OCaml-Nix-toy-project"

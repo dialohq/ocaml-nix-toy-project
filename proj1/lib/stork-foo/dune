@@ -1,0 +1,26 @@
+(rule
+ (targets
+  stork_1_j.ml
+  stork_1_t.ml
+  stork_2_t.ml
+  stork_2_j.ml
+  stork_1_j.mli
+  stork_1_t.mli
+  stork_2_t.mli
+  stork_2_j.mli
+  stork_upgrader_t.ml
+  stork_upgrader_t.mli
+  stork.ml
+  stork.mli
+  stork_user_fns.mli)
+ (deps
+  (:atd
+   (glob_files ./stork*.atd)))
+ (action
+  (run %{bin:stork} gen %{atd} -o ./stork)))
+
+(library
+ (name stork_foo)
+ (libraries atdgen-runtime)
+ (preprocess
+  (pps ppx_deriving.show ppx_yojson_conv)))

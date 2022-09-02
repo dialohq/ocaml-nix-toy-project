@@ -1,0 +1,10 @@
+{
+  "name": "ocaml-nix-demo",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "@ahrefs/bs-atdgen-codec-runtime": "^2.2.0",
+    "ocaml-nix-demo-shared": "*",
+    "rescript": "^10.0.1"
+  }
+}

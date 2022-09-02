@@ -1,0 +1,1 @@
+let () = Printf.printf "%s: %s" Shared.Config.project_name Proj1.Config.project_name

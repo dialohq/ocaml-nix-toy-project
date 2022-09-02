@@ -1,0 +1,10 @@
+pin-depends: [
+    [ "angstrom.dev" "git+https://github.com/dialohq/angstrom#34ef832321984ce73f29f927cf9918765f2071fc" ]
+    [ "grpc.dev" "git+https://github.com/dialohq/ocaml-grpc#08ed14473ae0f61c82a24d899a82fb29c4caf6f1" ]
+    [ "grpc-lwt.dev" "git+https://github.com/dialohq/ocaml-grpc#08ed14473ae0f61c82a24d899a82fb29c4caf6f1" ]
+    [ "h2.dev" "git+https://github.com/dialohq/ocaml-h2#ea310152a648401a8f566b75345abcdc38b246ae" ]
+    [ "h2-lwt.dev" "git+https://github.com/dialohq/ocaml-h2#ea310152a648401a8f566b75345abcdc38b246ae" ]
+    [ "h2-lwt-unix.dev" "git+https://github.com/dialohq/ocaml-h2#ea310152a648401a8f566b75345abcdc38b246ae" ]
+    [ "ocaml-protoc-plugin.dev" "git+https://github.com/dialohq/ocaml-protoc-plugin#88a099c4e8ff36fddc77c32dfe83a4bbdce64989" ]
+    [ "stork.dev" "git+https://github.com/dialohq/stork#0450ed1e1484fff9c61784c1a0040de201b85b4a" ]
+]

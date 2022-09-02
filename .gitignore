@@ -1,0 +1,5 @@
+_build
+_opam
+node_modules
+rescript/lib
+shared/lib

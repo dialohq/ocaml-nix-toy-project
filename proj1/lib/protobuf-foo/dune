@@ -1,0 +1,71 @@
+(rule
+ (targets google_include)
+ (action
+  (with-stdout-to
+   %{targets}
+   (system "pkg-config protobuf --variable=includedir"))))
+
+(rule
+ (targets annotations.ml)
+ (deps
+  (:proto google/api/annotations.proto))
+ (action
+  (run
+   protoc
+   -I
+   %{read-lines:google_include}
+   -I
+   .
+   "--ocaml_out=open=Google_types_deriving;annot=[@@deriving yojson_of, show { with_path = false }]:."
+   %{proto})))
+
+(rule
+ (targets http.ml)
+ (deps
+  (:proto google/api/http.proto))
+ (action
+  (run
+   protoc
+   -I
+   %{read-lines:google_include}
+   -I
+   .
+   "--ocaml_out=open=Google_types_deriving;annot=[@@deriving yojson_of, show { with_path = false }]:."
+   %{proto})))
+
+(rule
+ (targets status.ml)
+ (deps
+  (:proto google/rpc/status.proto))
+ (action
+  (run
+   protoc
+   -I
+   %{read-lines:google_include}
+   -I
+   .
+   "--ocaml_out=open=Google_types_deriving;annot=[@@deriving yojson_of, show { with_path = false }]:."
+   %{proto})))
+
+(rule
+ (targets dialo_nix.ml)
+ (deps
+  (:proto dialo_nix.proto))
+ (action
+  (run
+   protoc
+   -I
+   %{read-lines:google_include}
+   -I
+   .
+   "--ocaml_out=open=Google_types_deriving;annot=[@@deriving yojson_of, show { with_path = false }]:."
+   %{proto})))
+
+(library
+ (name protobuf_foo)
+ (libraries
+  ocaml-protoc-plugin
+  ocaml-protoc-plugin.google_types
+  google_types_deriving)
+ (preprocess
+  (pps ppx_deriving.show ppx_yojson_conv)))

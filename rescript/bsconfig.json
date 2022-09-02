@@ -1,0 +1,73 @@
+{
+  "name": "dialo-nix-res",
+  "version": "0.1.0",
+  "sources": [
+    {
+      "dir": "__atdgen__",
+      "subdirs": true,
+      "generators": [
+        {
+          "name": "foores_atd_t",
+          "edge": [
+            "Foores_t.ml",
+            "Foores_t.mli",
+            ":",
+            "../src/foores.atd"
+          ]
+        },
+        {
+          "name": "foores_atd_bs",
+          "edge": [
+            "Foores_bs.ml",
+            "Foores_bs.mli",
+            ":",
+            "../src/foores.atd"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "src",
+      "subdirs": true
+    }
+  ],
+  "generators": [
+    {
+      "name": "foores_atd_t",
+      "command": "atdgen -t -o ../../__atdgen__/Foores $in"
+    },
+    {
+      "name": "foores_atd_bs",
+      "command": "atdgen -bs -o ../../__atdgen__/Foores $in"
+    }
+  ],
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  },
+  "suffix": ".mjs",
+  "bs-dependencies": [
+    "ocaml-nix-demo-shared",
+    "@ahrefs/bs-atdgen-codec-runtime"
+  ],
+  "pinned-dependencies": ["ocaml-nix-demo-shared"],
+  "warnings": {
+    "number": "-44",
+    "error": "+A"
+  },
+  "gentypeconfig": {
+    "shims": {
+      "Js": "Js",
+      "Node": "Node"
+    },
+    "module": "es6",
+    "importPath": "absolute",
+    "language": "typescript",
+    "generatedFileExtension": ".gen.ts",
+    "debug": {
+      "all": false,
+      "basic": false
+    }
+  }
+}
+

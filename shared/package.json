@@ -1,0 +1,8 @@
+{
+  "name": "ocaml-nix-demo-shared",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "rescript": "^10.0.1"
+  }
+}

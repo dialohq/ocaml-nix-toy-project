@@ -1,0 +1,7 @@
+{
+  "name": "ocaml-nix-demo-shared",
+  "version": "0.1.0",
+  "sources": [{
+    "dir": "res"
+  }]
+}

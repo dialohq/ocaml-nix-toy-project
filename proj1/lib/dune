@@ -1,0 +1,32 @@
+(rule
+ (targets foobar_t.ml foobar_t.mli)
+ (deps
+  (:atd foobar.atd))
+ (action
+  (run %{bin:atdgen} -t %{atd})))
+
+(library
+ (name proj1)
+ (modules (:standard))
+ (libraries
+  shared
+  yojson
+  biniou
+  atdgen-runtime
+  ocaml-protoc-plugin
+  core
+  core_unix.time_unix
+  protobuf_foo
+  stork_foo
+  ppx_compare.runtime-lib)
+ (inline_tests)
+ (instrumentation
+  (backend bisect_ppx))
+ (preprocess
+  (pps
+   ppx_let
+   ppx_deriving.show
+   ppx_yojson_conv
+   ppx_compare
+   ppx_inline_test
+   ppx_expect)))
